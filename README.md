@@ -10,11 +10,6 @@
 [![GitHub followers](https://img.shields.io/github/followers/MH-787b?style=for-the-badge&color=cccccc&labelColor=000000&label=FOLLOWERS&logo=github)](https://github.com/MH-787b)
 [![GitHub Stars](https://img.shields.io/github/stars/MH-787b?style=for-the-badge&color=888888&labelColor=000000&label=STARS&logo=github)](https://github.com/MH-787b)
 
-<!-- ANIMATED TYPING SVG -->
-<br/>
-
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=800&height=100&lines=%3E+Initializing+neural+interface...;%3E+Loading+cybernetic+protocols...;%3E+System+online.+Welcome+to+the+grid.;%3E+Building+the+future%2C+one+commit+at+a+time.)](https://git.io/typing-svg)
-
 </div>
 
 <!-- ANIMATED DIVIDER -->
