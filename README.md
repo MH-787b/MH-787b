@@ -25,7 +25,6 @@
 ```js
 // Welcome to my digital realm
 const MH787b = {
-    pronouns: "they" | "them",
     code: ["JavaScript", "TypeScript", "Python", "Rust", "C++"],
     tools: ["React", "Node.js", "Docker", "Git", "Linux"],
     architecture: ["microservices", "event-driven", "serverless"],
