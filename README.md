@@ -15,16 +15,6 @@
 <!-- ANIMATED DIVIDER -->
 <img src="./assets/divider.svg" width="100%" alt="divider"/>
 
-## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> &nbsp; `SYSTEM.profile` &nbsp; <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30">
-
-```js
-const MH787b = {
-    code: ["JavaScript", "TypeScript", "Python", "Rust", "C++"],
-    tools: ["React", "Node.js", "Docker", "Git", "Linux"],
-    architecture: ["microservices", "event-driven", "serverless"],
-};
-```
-
 <div align="center">
 
 <!-- ANIMATED WAVE -->
