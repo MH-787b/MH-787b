@@ -1,0 +1,265 @@
+<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Cyberpunk gradient -->
+    <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="30%" style="stop-color:#0d0221"/>
+      <stop offset="60%" style="stop-color:#150030"/>
+      <stop offset="100%" style="stop-color:#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="neonLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff003c;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#ff00ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#00fff9;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="neonLine2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00fff9;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#ff003c;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="textGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00fff9"/>
+      <stop offset="50%" style="stop-color:#ff00ff"/>
+      <stop offset="100%" style="stop-color:#00fff9"/>
+    </linearGradient>
+
+    <!-- Scanline pattern -->
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="rgba(255,255,255,0.03)"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,255,249,0.06)" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- Glitch filter -->
+    <filter id="glitch1">
+      <feOffset in="SourceGraphic" dx="2" dy="0" result="r"/>
+      <feOffset in="SourceGraphic" dx="-2" dy="0" result="b"/>
+      <feColorMatrix in="r" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="red"/>
+      <feColorMatrix in="b" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="blue"/>
+      <feBlend in="red" in2="blue" mode="screen" result="blend"/>
+      <feBlend in="blend" in2="SourceGraphic" mode="screen"/>
+    </filter>
+
+    <!-- Neon glow filter -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur3"/>
+      <feMerge>
+        <feMergeNode in="blur3"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip for glitch slices -->
+    <clipPath id="glitchSlice1">
+      <rect x="0" y="90" width="1200" height="30"/>
+    </clipPath>
+    <clipPath id="glitchSlice2">
+      <rect x="0" y="140" width="1200" height="20"/>
+    </clipPath>
+    <clipPath id="glitchSlice3">
+      <rect x="0" y="170" width="1200" height="15"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#cyberGrad)"/>
+  <rect width="1200" height="300" fill="url(#grid)"/>
+  <rect width="1200" height="300" fill="url(#scanlines)" opacity="0.5"/>
+
+  <!-- Animated horizontal neon lines -->
+  <g>
+    <line x1="-400" y1="60" x2="400" y2="60" stroke="url(#neonLine)" stroke-width="1" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" from="0,0" to="1600,0" dur="4s" repeatCount="indefinite"/>
+    </line>
+    <line x1="-400" y1="240" x2="400" y2="240" stroke="url(#neonLine2)" stroke-width="1" opacity="0.6">
+      <animateTransform attributeName="transform" type="translate" from="1600,0" to="0,0" dur="5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="-300" y1="150" x2="300" y2="150" stroke="url(#neonLine)" stroke-width="0.5" opacity="0.3">
+      <animateTransform attributeName="transform" type="translate" from="0,0" to="1500,0" dur="7s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Floating particles -->
+  <g opacity="0.6">
+    <circle cx="100" cy="50" r="1.5" fill="#00fff9">
+      <animate attributeName="cy" values="50;250;50" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="200" r="1" fill="#ff00ff">
+      <animate attributeName="cy" values="200;30;200" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="100" r="2" fill="#ff003c">
+      <animate attributeName="cy" values="100;270;100" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="250" r="1" fill="#00fff9">
+      <animate attributeName="cy" values="250;20;250" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="80" r="1.5" fill="#ff00ff">
+      <animate attributeName="cy" values="80;280;80" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1100" cy="180" r="1" fill="#ff003c">
+      <animate attributeName="cy" values="180;40;180" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="150" r="0.8" fill="#bd00ff">
+      <animate attributeName="cy" values="150;20;150" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="30" r="1.2" fill="#00fff9">
+      <animate attributeName="cy" values="30;260;30" dur="6.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="270" r="1.8" fill="#ff00ff">
+      <animate attributeName="cy" values="270;50;270" dur="8.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0" dur="8.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1050" cy="120" r="0.7" fill="#ff003c">
+      <animate attributeName="cy" values="120;280;120" dur="7.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="7.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Corner decorations - cyberpunk brackets -->
+  <g stroke="#00fff9" stroke-width="2" fill="none" opacity="0.7" filter="url(#subtleGlow)">
+    <polyline points="30,10 10,10 10,40"/>
+    <polyline points="1170,10 1190,10 1190,40"/>
+    <polyline points="30,290 10,290 10,260"/>
+    <polyline points="1170,290 1190,290 1190,260"/>
+  </g>
+
+  <!-- Small decorative elements -->
+  <g fill="none" stroke="#ff00ff" stroke-width="0.5" opacity="0.4">
+    <rect x="50" y="25" width="80" height="8" rx="1">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1070" y="25" width="80" height="8" rx="1">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="50" y="267" width="60" height="8" rx="1">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="1090" y="267" width="60" height="8" rx="1">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- HEX data decoration -->
+  <text x="60" y="55" font-family="monospace" font-size="8" fill="#00fff9" opacity="0.3">
+    0x4D48 0x2D37 0x3837 0x62
+    <animate attributeName="opacity" values="0.1;0.4;0.1" dur="5s" repeatCount="indefinite"/>
+  </text>
+  <text x="1000" y="55" font-family="monospace" font-size="8" fill="#ff00ff" opacity="0.3">
+    SYS://ONLINE
+    <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" repeatCount="indefinite"/>
+  </text>
+  <text x="60" y="280" font-family="monospace" font-size="8" fill="#ff003c" opacity="0.3">
+    NEURAL_LINK::ACTIVE
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite"/>
+  </text>
+  <text x="1020" y="280" font-family="monospace" font-size="8" fill="#00fff9" opacity="0.3">
+    NET::CONNECTED
+    <animate attributeName="opacity" values="0.3;0.5;0.1" dur="6s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Main text - MH-787b with glitch -->
+  <g transform="translate(600, 130)">
+    <!-- Shadow layers for depth -->
+    <text text-anchor="middle" font-family="'Courier New', monospace" font-weight="bold" font-size="72" fill="#ff003c" opacity="0.5" filter="url(#neonGlow)">
+      MH-787b
+      <animate attributeName="opacity" values="0.5;0.3;0.5;0.5;0.2;0.5" dur="4s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- Glitch slice 1 -->
+    <g clip-path="url(#glitchSlice1)">
+      <text text-anchor="middle" font-family="'Courier New', monospace" font-weight="bold" font-size="72" fill="#00fff9" y="0">
+        MH-787b
+        <animate attributeName="x" values="0;3;-2;0;5;0;-3;0" dur="0.5s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- Glitch slice 2 -->
+    <g clip-path="url(#glitchSlice2)">
+      <text text-anchor="middle" font-family="'Courier New', monospace" font-weight="bold" font-size="72" fill="#ff00ff" y="0">
+        MH-787b
+        <animate attributeName="x" values="0;-4;2;0;-3;0;4;0" dur="0.4s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- Main text -->
+    <text text-anchor="middle" font-family="'Courier New', monospace" font-weight="bold" font-size="72" fill="url(#textGlow)" filter="url(#glitch1)">
+      MH-787b
+      <animate attributeName="opacity" values="1;0.9;1;1;0.7;1;1;0.85;1" dur="3s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="600" y="180" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" fill="#00fff9" opacity="0.8" letter-spacing="12" filter="url(#subtleGlow)">
+    DIGITAL ARCHITECT
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="letter-spacing" values="12;14;12" dur="3s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Blinking cursor -->
+  <rect x="748" y="164" width="12" height="18" fill="#00fff9" opacity="0.8">
+    <animate attributeName="opacity" values="0;0.8;0" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Bottom status bar -->
+  <g transform="translate(0, 210)">
+    <rect x="200" y="0" width="800" height="1" fill="url(#neonLine)" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="600" y="25" text-anchor="middle" font-family="monospace" font-size="10" fill="#ff00ff" opacity="0.6" letter-spacing="4">
+      [ WELCOME TO MY DIGITAL REALM ]
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Top and bottom border lines with animation -->
+  <rect x="0" y="0" width="1200" height="2" fill="#00fff9" opacity="0.6">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="0" y="298" width="1200" height="2" fill="#ff00ff" opacity="0.6">
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Data stream effect on sides -->
+  <g font-family="monospace" font-size="9" fill="#00fff9" opacity="0.15">
+    <text x="15" y="80">01101</text>
+    <text x="15" y="100">10010</text>
+    <text x="15" y="120">11101</text>
+    <text x="15" y="140">00110</text>
+    <text x="15" y="160">10101</text>
+    <text x="15" y="180">01001</text>
+    <text x="15" y="200">11010</text>
+    <text x="15" y="220">00101</text>
+    <text x="1155" y="80">10110</text>
+    <text x="1155" y="100">01101</text>
+    <text x="1155" y="120">11001</text>
+    <text x="1155" y="140">00111</text>
+    <text x="1155" y="160">10010</text>
+    <text x="1155" y="180">01110</text>
+    <text x="1155" y="200">11100</text>
+    <text x="1155" y="220">00011</text>
+    <animate attributeName="opacity" values="0.1;0.25;0.1" dur="2s" repeatCount="indefinite"/>
+  </g>
+</svg>
