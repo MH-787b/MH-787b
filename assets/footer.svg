@@ -29,12 +29,12 @@
 
   <!-- Animated text -->
   <text x="600" y="50" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" fill="#ffffff" opacity="0.6" letter-spacing="6">
-    SIGNAL::TRANSMITTED
+    EOF
     <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
   </text>
 
   <text x="600" y="75" text-anchor="middle" font-family="monospace" font-size="11" fill="#888888" opacity="0.4" letter-spacing="3">
-    [ END OF TRANSMISSION ]
+    [ --- ]
     <animate attributeName="opacity" values="0.15;0.5;0.15" dur="4s" repeatCount="indefinite"/>
   </text>
 

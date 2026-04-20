@@ -18,13 +18,12 @@
 ## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> &nbsp; `SYSTEM.profile` &nbsp; <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30">
 
 ```js
-// Welcome to my digital realm
 const MH787b = {
     code: ["JavaScript", "TypeScript", "Python", "Rust", "C++"],
     tools: ["React", "Node.js", "Docker", "Git", "Linux"],
     architecture: ["microservices", "event-driven", "serverless"],
     currentFocus: "Building systems that matter",
-    funFact: "I debug in my dreams"
+    funFact: "sleep is overrated"
 };
 ```
 
