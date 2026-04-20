@@ -22,8 +22,6 @@ const MH787b = {
     code: ["JavaScript", "TypeScript", "Python", "Rust", "C++"],
     tools: ["React", "Node.js", "Docker", "Git", "Linux"],
     architecture: ["microservices", "event-driven", "serverless"],
-    currentFocus: "Building systems that matter",
-    funFact: "sleep is overrated"
 };
 ```
 
