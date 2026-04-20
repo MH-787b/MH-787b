@@ -121,15 +121,6 @@ const MH787b = {
 <!-- SOCIAL BADGES - Customize these URLs! -->
 [![GitHub](https://img.shields.io/badge/GitHub-%23000000.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MH-787b)
 
-<br/>
-
-<!-- RANDOM DEV QUOTE -->
-![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)
-
-<br/>
-
-<!-- RANDOM DEV MEME -->
-<img src="https://randommeme-five.vercel.app/" width="400px" alt="Random Dev Meme"/>
 
 </div>
 
